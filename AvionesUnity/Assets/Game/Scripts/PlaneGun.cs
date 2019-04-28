@@ -8,14 +8,14 @@ public class PlaneGun : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name=="spitfire")
+        if (col.gameObject.name=="Terrain")
         {
             Destroy(gameObject);
         }
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name != "spitfire")
+        if (col.gameObject.name == "Terrain")
         {
             Destroy(gameObject);
         }
