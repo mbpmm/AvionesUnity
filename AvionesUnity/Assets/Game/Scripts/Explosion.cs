@@ -12,12 +12,16 @@ public class Explosion : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        Rigidbody rig = GetComponent<Rigidbody>();
-        rig.useGravity = true;
+        
         if (collision.gameObject.name=="BulletEmitter"|| collision.gameObject.name == "Bullet(Clone)")
         {   
         }
         else
+        {
+            Rigidbody rig = GetComponent<Rigidbody>();
+            rig.useGravity = true;
             Explode();
+        }
+            
     }
 }
