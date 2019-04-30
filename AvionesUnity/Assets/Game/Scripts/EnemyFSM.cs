@@ -34,7 +34,7 @@ public class EnemyFSM : MonoBehaviour
         switch (state)
         {
             case EnemyState.Idle:
-                transform.Translate(Vector3.forward*speed/2*Time.deltaTime);
+                transform.Translate(transform.forward*speed/2*Time.deltaTime);
                 if (t > 2)
                 {
                     NextState();
@@ -43,7 +43,7 @@ public class EnemyFSM : MonoBehaviour
             case EnemyState.GoingToTarget:
                 Vector3 dir = target.position - transform.position;
                 transform.LookAt(target);
-                transform.Translate(transform.forward* speed * Time.deltaTime);
+                transform.Translate(transform.forward.normalized* speed * Time.deltaTime);
                 RaycastHit hit;
                 Debug.DrawRay(transform.position, transform.forward * 80, Color.red);
 
