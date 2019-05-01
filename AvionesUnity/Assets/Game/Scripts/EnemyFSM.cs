@@ -8,15 +8,14 @@ public class EnemyFSM : MonoBehaviour
     {
         Idle,
         GoingToTarget,
-        GoAway,
         Last,
     }
 
     [SerializeField] private EnemyState state;
 
-    public float speed = 20;
-    public float distanceToStop = 7;
-    public float distanceToRestart = 40;
+    public float speed;
+    public float rotateSpeed;
+    public float distanceToStop;
     public LayerMask rayCastLayer;
     public float rayDistance;
     public GameObject bulletEmitter;
@@ -30,20 +29,22 @@ public class EnemyFSM : MonoBehaviour
 
     private void Update()
     {
-        t += Time.deltaTime;
         switch (state)
         {
             case EnemyState.Idle:
-                transform.Translate(transform.forward*speed/2*Time.deltaTime);
-                if (t > 2)
+                t += Time.deltaTime;
+                transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.identity, rotateSpeed * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+                if (t > 3)
                 {
-                    NextState();
+                    SetState(EnemyState.GoingToTarget);
+                    t = 0;
                 }
                 break;
             case EnemyState.GoingToTarget:
-                Vector3 dir = target.position - transform.position;
-                transform.LookAt(target);
-                transform.Translate(transform.forward.normalized* speed * Time.deltaTime);
+                Quaternion q = Quaternion.LookRotation(target.position - transform.position);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, q, rotateSpeed * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
                 RaycastHit hit;
                 Debug.DrawRay(transform.position, transform.forward * 80, Color.red);
 
@@ -73,15 +74,11 @@ public class EnemyFSM : MonoBehaviour
                     Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.white);
                 }
                 if (Vector3.Distance(transform.position, target.position) < distanceToStop)
-                    NextState();
-                break;
-            case EnemyState.GoAway:
-                Vector3 dir02 = transform.position - target.position;
-                transform.Translate(dir02.normalized * speed * Time.deltaTime);
-                if (Vector3.Distance(transform.position, target.position) > distanceToRestart)
-                    NextState();
+                    SetState(EnemyState.Idle);
                 break;
         }
+
+        Debug.Log(Vector3.Distance(transform.position, target.position));
     }
 
     private void NextState()

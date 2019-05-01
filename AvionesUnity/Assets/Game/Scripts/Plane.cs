@@ -20,6 +20,7 @@ public class Plane : MonoBehaviour
     private float mouseY;
     private float horizontal;
     private Vector3 lookRot;
+    private float bulletTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,11 +61,17 @@ public class Plane : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            GameObject auxBullet;
-            auxBullet = Instantiate(bullet, bulletEmitter.transform.position, bulletEmitter.transform.rotation) ;
-            Rigidbody rig;
-            rig = auxBullet.GetComponent<Rigidbody>();
-            rig.AddForce(transform.forward * bulletForce);
+            bulletTimer += Time.deltaTime;
+            if (bulletTimer>0.15f)
+            {
+                GameObject auxBullet;
+                auxBullet = Instantiate(bullet, bulletEmitter.transform.position, bulletEmitter.transform.rotation);
+                Rigidbody rig;
+                rig = auxBullet.GetComponent<Rigidbody>();
+                rig.AddForce(transform.forward * bulletForce);
+                bulletTimer = 0;
+            }
+            
         }
     }
 
