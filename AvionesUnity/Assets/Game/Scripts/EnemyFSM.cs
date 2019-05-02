@@ -15,6 +15,7 @@ public class EnemyFSM : MonoBehaviour
 
     public float speed;
     public float rotateSpeed;
+    public float rotateSpeed2;
     public float distanceToStop;
     public LayerMask rayCastLayer;
     public float rayDistance;
@@ -77,8 +78,6 @@ public class EnemyFSM : MonoBehaviour
                     SetState(EnemyState.Idle);
                 break;
         }
-
-        Debug.Log(Vector3.Distance(transform.position, target.position));
     }
 
     private void NextState()

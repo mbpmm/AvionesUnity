@@ -15,7 +15,6 @@ public class Plane : MonoBehaviour
     public GameObject bullet;
     public float bulletForce;
 
-    private float planeHP;
     private float mouseX;
     private float mouseY;
     private float horizontal;
@@ -31,8 +30,7 @@ public class Plane : MonoBehaviour
         sensY = 70f;
         speedMax = 40f;
         speedMin = 10f;
-        bulletForce = 250000 * Time.deltaTime;
-        planeHP = 100f;
+        bulletForce = 300000 * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -75,12 +73,4 @@ public class Plane : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "EnemyContainer"|| collision.gameObject.name == "enemy")
-        {
-            planeHP = 0;
-            Debug.Log(planeHP);
-        }
-    }
 }

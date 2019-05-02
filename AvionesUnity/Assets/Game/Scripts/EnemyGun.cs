@@ -12,6 +12,11 @@ public class EnemyGun : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (col.gameObject.name == "spitfire")
+        {
+            Debug.Log("colisiona");
+            Destroy(gameObject);
+        }
     }
     void OnCollisionEnter(Collision col)
     {
@@ -23,7 +28,6 @@ public class EnemyGun : MonoBehaviour
         {
             Debug.Log("colisiona");
             Destroy(gameObject);
-
         }
 
     }
