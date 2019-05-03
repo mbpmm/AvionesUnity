@@ -14,14 +14,15 @@ public class EnemyExplosion : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Bullet(Clone)")
-        {
-            enemyHP -= 10;
-            Debug.Log(enemyHP);
-        }
+        
 
         if (collision.gameObject.name == "EnemyBulletEmitter" || collision.gameObject.name == "BulletEnemy(Clone)"|| collision.gameObject.name == "enemy")
         {
+        }
+        else if (collision.gameObject.name == "Bullet(Clone)")
+        {
+            enemyHP -= 10;
+            Debug.Log(enemyHP);
         }
         else
         {

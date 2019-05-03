@@ -6,17 +6,28 @@ public class EnemyGun : MonoBehaviour
 {
 
 
-    void OnTriggerEnter(Collider col)
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.gameObject.name == "Terrain")
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    if (col.gameObject.name == "spitfire")
+    //    {
+    //        Debug.Log("colisiona");
+    //        Destroy(gameObject);
+    //    }
+    //}
+    private float t;
+    private void Start()
     {
-        if (col.gameObject.name == "Terrain")
+        t += Time.deltaTime;
+
+        if (t>3f)
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.name == "spitfire")
-        {
-            Debug.Log("colisiona");
-            Destroy(gameObject);
-        }
+
     }
     void OnCollisionEnter(Collision col)
     {
