@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float enemiesDestroyed;
+    public float points;
+
+    private static GameManager instance;
+    
+    public static GameManager Get()
+    {
+        return instance;
+    }
+
+    private void Awake()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-    }
+        enemiesDestroyed = 0;
+        points = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }

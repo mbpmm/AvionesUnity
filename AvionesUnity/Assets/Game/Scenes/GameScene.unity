@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.2495741, g: 0.31190813, b: 0.36755008, a: 1}
+  m_IndirectSpecularColor: {r: 0.24957377, g: 0.31190726, b: 0.36754996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4174860e78409594c844e1b30d1410a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 150
+  enemyHP: 0
 --- !u!199 &238673557
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5081,13 +5081,13 @@ PrefabInstance:
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bulletForce
-      value: 70000
+      value: 90000
       objectReference: {fileID: 0}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 5089154475443036409, guid: 4c4eab71f239ba446830459b24160e85,
+      objectReference: {fileID: 5089154475443036409, guid: a220b68484581284398ee424af87d2f9,
         type: 3}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -5118,6 +5118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotateSpeed2
       value: 60.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
+        type: 3}
+      propertyPath: hp
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2228279007678091076, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -5537,7 +5542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4174860e78409594c844e1b30d1410a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 150
+  enemyHP: 0
 --- !u!199 &598629018
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -10424,7 +10429,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696726836}
   serializedVersion: 2
-  m_Mass: 254.09
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -10516,7 +10521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4174860e78409594c844e1b30d1410a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 150
+  enemyHP: 0
 --- !u!199 &787038604
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -15368,7 +15373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4174860e78409594c844e1b30d1410a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 150
+  enemyHP: 0
 --- !u!199 &893620594
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -20204,13 +20209,13 @@ PrefabInstance:
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bulletForce
-      value: 70000
+      value: 90000
       objectReference: {fileID: 0}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 5089154475443036409, guid: 4c4eab71f239ba446830459b24160e85,
+      objectReference: {fileID: 5089154475443036409, guid: a220b68484581284398ee424af87d2f9,
         type: 3}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -20241,6 +20246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotateSpeed2
       value: 60.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
+        type: 3}
+      propertyPath: hp
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2228279007678091076, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -20334,13 +20344,13 @@ PrefabInstance:
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bulletForce
-      value: 70000
+      value: 90000
       objectReference: {fileID: 0}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 5089154475443036409, guid: 4c4eab71f239ba446830459b24160e85,
+      objectReference: {fileID: 5089154475443036409, guid: a220b68484581284398ee424af87d2f9,
         type: 3}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -20371,6 +20381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotateSpeed2
       value: 60.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
+        type: 3}
+      propertyPath: hp
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2228279007678091076, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -25391,6 +25406,7 @@ MonoBehaviour:
   bulletEmitter: {fileID: 866186112}
   bullet: {fileID: 5089154475443036409, guid: 4c4eab71f239ba446830459b24160e85, type: 3}
   bulletForce: 0
+  playerHP: 100
 --- !u!1001 &2140988430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25591,13 +25607,13 @@ PrefabInstance:
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bulletForce
-      value: 70000
+      value: 90000
       objectReference: {fileID: 0}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 5089154475443036409, guid: 4c4eab71f239ba446830459b24160e85,
+      objectReference: {fileID: 5089154475443036409, guid: a220b68484581284398ee424af87d2f9,
         type: 3}
     - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}
@@ -25628,6 +25644,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotateSpeed2
       value: 60.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228279008382123324, guid: 4e710df80908c21478aaab951ec9608b,
+        type: 3}
+      propertyPath: hp
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2228279007678091076, guid: 4e710df80908c21478aaab951ec9608b,
         type: 3}

@@ -23,6 +23,7 @@ public class EnemyFSM : MonoBehaviour
     public GameObject bullet;
     public float bulletForce;
     public float bulletDelay;
+    public float hp;
 
     public Transform target;
 
@@ -92,5 +93,21 @@ public class EnemyFSM : MonoBehaviour
     private void SetState(EnemyState es)
     {
         state = es;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name=="Bullet(Clone)")
+        {
+            hp = hp - 10;
+            Debug.Log("colision de bala: " + hp) ;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "spitfire")
+        {
+            hp = 0;
+        }
     }
 }

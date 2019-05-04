@@ -14,6 +14,7 @@ public class Plane : MonoBehaviour
     public GameObject bulletEmitter;
     public GameObject bullet;
     public float bulletForce;
+    public float playerHP;
 
     private float mouseX;
     private float mouseY;
@@ -71,6 +72,20 @@ public class Plane : MonoBehaviour
             }
             
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "BulletEnemy(Clone)")
+        {
+            playerHP = playerHP - 10;
+            Debug.Log("colision de bala: " + playerHP);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        playerHP = 0;
     }
 
 }
