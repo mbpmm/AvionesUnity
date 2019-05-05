@@ -15,6 +15,7 @@ public class Plane : MonoBehaviour
     public GameObject bullet;
     public float bulletForce;
     public float playerHP;
+    public float fuel;
 
     private float mouseX;
     private float mouseY;
@@ -71,6 +72,13 @@ public class Plane : MonoBehaviour
                 bulletTimer = 0;
             }
             
+        }
+
+        fuel -= Time.deltaTime * planeSpeed * 0.03f;
+
+        if (fuel<=0)
+        {
+            playerHP = 0;
         }
     }
 

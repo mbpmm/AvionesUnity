@@ -27,7 +27,7 @@ public class LogoFade : MonoBehaviour
 
         if (timer>2f&&timer<4f)
         {
-            appear += Time.deltaTime * 0.3f;
+            appear += Time.deltaTime * 0.5f;
             logo.color = new Vector4(1, 1, 1, appear);
         }
 

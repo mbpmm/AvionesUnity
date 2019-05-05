@@ -5,6 +5,12 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public float planeHP;
+
+    private GameObject gameManager;
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager");
+    }
     void Update()
     {
         planeHP = GetComponent<Plane>().playerHP;
@@ -21,5 +27,6 @@ public class Explosion : MonoBehaviour
         ParticleSystem exp = GetComponent<ParticleSystem>();
         exp.Play();
         Destroy(gameObject, exp.main.duration);
+        gameManager.GetComponent<GameManager>().playerDead = true;
     }
 }

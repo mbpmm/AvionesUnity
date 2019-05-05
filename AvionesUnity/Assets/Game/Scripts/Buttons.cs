@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    //private GameObject pointsNum;
+    private GameObject gameManager;
 
     void Start()
     {
-        //pointsNum = GameObject.Find("GameManager");
+        gameManager = GameObject.Find("GameManager");
     }
 
     public void Play()
@@ -24,6 +24,7 @@ public class Buttons : MonoBehaviour
 
     public void GoToMenu()
     {
+        Destroy(gameManager.gameObject);
         SceneManager.LoadScene("IntroScene");
     }
 
