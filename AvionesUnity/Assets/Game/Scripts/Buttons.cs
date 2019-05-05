@@ -17,11 +17,6 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    public void Retry()
-    {
-        SceneManager.LoadScene("GameScene");
-    }
-
     public void GoToMenu()
     {
         Destroy(gameManager.gameObject);

@@ -15,6 +15,7 @@ public class UIManagerFS : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame

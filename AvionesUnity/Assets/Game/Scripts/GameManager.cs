@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //arreglar referencias con find
     public GameObject panel;
     public GameObject cam;
+    public GameObject canvas;
     public float levelTimer;
     public float enemiesLvl;
     public bool playerDead;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemiesLvl==0)
+        if (enemiesLvl==0&&level==1)
         {
             levelTimer += Time.deltaTime;
             panel.gameObject.SetActive(true);
@@ -58,8 +59,17 @@ public class GameManager : MonoBehaviour
             {
                 enemiesLvl = 6;
                 level++;
+                levelTimer = 0;
                 SceneManager.LoadScene("GameScene 1");
+                
             }
+        }
+        if (level==2)
+        {
+            cam.gameObject.SetActive(false);
+            panel.gameObject.SetActive(false);
+            winText.gameObject.SetActive(false);
+            loseText.gameObject.SetActive(false);
         }
         if (enemiesLvl == 0&&level==2)
         {
@@ -68,10 +78,18 @@ public class GameManager : MonoBehaviour
             winText.gameObject.SetActive(true);
             if (levelTimer > 4f)
             {
-                enemiesLvl = 4;
+                enemiesLvl = 6;
                 level++;
+                levelTimer = 0;
                 SceneManager.LoadScene("GameScene 2");
             }
+        }
+        if (level == 3)
+        {
+            cam.gameObject.SetActive(false);
+            panel.gameObject.SetActive(false);
+            winText.gameObject.SetActive(false);
+            loseText.gameObject.SetActive(false);
         }
         if (enemiesLvl == 0 && level == 3)
         {
@@ -80,6 +98,7 @@ public class GameManager : MonoBehaviour
             winText.gameObject.SetActive(true);
             if (levelTimer > 4f)
             {
+                level++;
                 SceneManager.LoadScene("FinalScene");
             }
         }
@@ -91,10 +110,12 @@ public class GameManager : MonoBehaviour
             loseText.gameObject.SetActive(true);
             if (levelTimer>4f)
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                Destroy(gameObject);
-                SceneManager.LoadScene("IntroScene");
+                canvas.gameObject.SetActive(false);
+                cam.gameObject.SetActive(false);
+                panel.gameObject.SetActive(false);
+                winText.gameObject.SetActive(false);
+                loseText.gameObject.SetActive(false);
+                SceneManager.LoadScene("FinalScene");
             }
             
         }
