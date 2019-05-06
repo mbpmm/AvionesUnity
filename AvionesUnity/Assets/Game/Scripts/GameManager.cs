@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
                 panel.gameObject.SetActive(false);
                 winText.gameObject.SetActive(false);
                 loseText.gameObject.SetActive(false);
+                playerDead = false;
                 SceneManager.LoadScene("FinalScene");
             }
             
