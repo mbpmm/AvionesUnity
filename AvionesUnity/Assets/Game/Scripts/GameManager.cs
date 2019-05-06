@@ -121,4 +121,11 @@ public class GameManager : MonoBehaviour
             
         }
     }
+
+    public void EnemyExplosion()
+    {
+        enemiesDestroyed++;
+        enemiesLvl--;
+        points += 200;
+    }
 }

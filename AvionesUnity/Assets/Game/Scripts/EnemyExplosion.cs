@@ -6,10 +6,12 @@ public class EnemyExplosion : MonoBehaviour
 {
     public float enemyHP;
     private bool discountOnce;
-    private GameObject gameManager;
+    private GameObject man;
+    private GameManager gameManager;
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager");
+        man = GameObject.Find("GameManager");
+        gameManager = man.GetComponent<GameManager>();
         discountOnce = false;
     }
     void Update()
@@ -21,7 +23,6 @@ public class EnemyExplosion : MonoBehaviour
             rig.useGravity = true;
             rig.isKinematic = false;
             Explode();
-            
         }
         
     }
@@ -29,10 +30,7 @@ public class EnemyExplosion : MonoBehaviour
     {
         if (!discountOnce)
         {
-            gameManager.GetComponent<GameManager>().enemiesDestroyed++;
-            gameManager.GetComponent<GameManager>().enemiesLvl--;
-            gameManager.GetComponent<GameManager>().points += 200 ;
-            Debug.Log(gameManager.GetComponent<GameManager>().enemiesLvl);
+            gameManager.EnemyExplosion();
             discountOnce = true;
         }
         ParticleSystem exp = GetComponent<ParticleSystem>();
